@@ -1,0 +1,26 @@
+@import 'phone'
+@import 'slider'
+@import 'gallery-card'
+
+.img-gradient
+  position: relative
+  display: inline-block
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    background: linear-gradient(rgba($main-color, 0), $main-color)
+  &__label
+    position: absolute
+    z-index: 1
+    bottom: 10px
+    left: 15px
+    padding-top: 2px
+    padding-left: 10px
+    color: #fff
+    line-height: 1
+    text-transform: uppercase
+    border-left: 3px solid #fff

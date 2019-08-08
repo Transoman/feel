@@ -1,0 +1,39 @@
+.swiper-pagination
+  &-bullet
+    border-radius: 0
+    background-color: #c0c4cc
+    opacity: 1
+    +trans
+    &.swiper-pagination-bullet-active
+      background-color: $main-color
+
+.swiper-button-prev,
+.swiper-button-next
+  background: none
+  width: 20px
+  height: 18px
+  margin-top: -7px
+  svg
+    width: 20px
+    height: 14px
+    fill: $main-color
+    +trans
+  &:hover, &:focus
+    outline: none
+    svg
+      fill: $accent
+
+.slider-controls
+  position: relative
+  display: flex
+  align-items: center
+  justify-content: flex-end
+  .swiper-button-prev,
+  .swiper-button-next
+    position: static
+    margin-top: 0
+  .devider
+    height: 20px
+    width: 1px
+    margin: 0 17px
+    background-color: #e5e5e5

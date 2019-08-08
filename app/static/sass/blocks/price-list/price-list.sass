@@ -1,0 +1,45 @@
+.price-list-slider
+  margin: 0 -15px
+  &__item
+    padding: 0 15px
+  &__inner
+    position: relative
+    max-width: 210px
+    margin: 0 auto
+  &__img
+    padding-right: 40px
+    +r(576)
+      padding: 0 20px
+  &__price
+    position: absolute
+    top: 135px
+    right: 15px
+    display: inline-block
+    min-width: 140px
+    padding: 10px 40px 10px 10px
+    font-family: $din-font
+    font-size: 36px
+    font-weight: 500
+    line-height: 1
+    text-align: right
+    background-color: #fff
+    border-left: 5px solid $accent
+    border-radius: 2px
+    box-shadow: 0 0 30px rgba($main-color, 0.1)
+    +r(576)
+      right: 0
+    &-currency
+      position: absolute
+      top: 50%
+      right: 30px
+      display: block
+      font-size: 13px
+      font-weight: 900
+      color: $accent
+      transform: rotate(-90deg) translateX(50%)
+      transform-origin: 100% 0
+      text-transform: uppercase
+  &__title
+    margin: 35px 0 0
+    font-size: 15px
+    text-align: center

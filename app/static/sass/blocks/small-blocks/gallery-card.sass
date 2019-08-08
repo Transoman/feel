@@ -1,0 +1,50 @@
+.gallery-card
+  position: relative
+  z-index: 1
+  display: block
+  padding: 0 30px
+  margin-bottom: 30px
+  &::before
+    content: ''
+    position: absolute
+    top: 30px
+    bottom: 30px
+    left: 0
+    right: 0
+    border: 2px solid $bd-color
+  &:hover
+    .gallery-card
+      &__body
+        opacity: 1
+  &__img
+    position: relative
+    width: 210px
+    height: 210px
+    margin: 0 auto
+    overflow: hidden
+    img
+      position: absolute
+      top: 50%
+      left: 50%
+      max-width: none
+      transform: translate(-50%, -50%)
+  &__body
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    background-color: rgba(#000, 0.9)
+    text-align: center
+    color: #fff
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    text-transform: uppercase
+    +trans
+    opacity: 0
+    svg
+      width: 20px
+      height: 20px
+      fill: #fff

@@ -1,0 +1,176 @@
+*,
+*:before,
+*:after
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+
+/* Clearfix for float elements */
+.clearfix:before,
+.clearfix:after
+  content: ''
+  display: table
+
+.clearfix:after 
+  clear: both
+
+.clearfix
+  zoom: 1 /* For IE 6/7 hasLayout */
+
+
+/* Common styles */
+html
+  overflow-x: hidden
+
+body
+  margin: 0
+  padding: 0
+  height: 100%
+  min-width: 320px
+  font-family: $main-font
+  font-size: 15px
+  line-height: 1.3
+  color: $main-color
+  overflow-x: hidden
+
+img
+  max-width: 100%
+  height: auto
+
+a
+  color: $main-color
+  +trans
+  &:hover, &:focus
+    text-decoration: none
+    color: $accent
+    outline: none
+
+h1, h2, h3, h4, h5, h6
+  font-family: $din-font
+  text-transform: uppercase
+
+h1
+  font-size: 64px
+  +r(1200)
+    font-size: 54px
+  +r(576)
+    font-size: 34px
+
+h2
+  font-size: 36px
+  line-height: 1
+  +r(992)
+    font-size: 30px
+  +r(576)
+    font-size: 24px
+
+section
+  padding: 65px 0 70px
+
+/* Hidden element */
+.visually-hidden
+  position: absolute
+  width: 1px
+  height: 1px
+  margin: -1px
+  padding: 0
+  border: 0
+  clip: rect(0 0 0 0)
+  overflow: hidden
+
+/* Buttons */
+.btn
+  display: inline-block
+  vertical-align: middle
+  padding: 13px 30px 10px
+  font-family: $main-font
+  font-size: 15px
+  font-weight: 700
+  color: #fff
+  text-align: center
+  background-color: $accent
+  background-image: linear-gradient(to right, #ff9100, #f9b800)
+  border: 0
+  outline: none
+  text-decoration: none
+  cursor: pointer
+  user-select: none
+  transition: all .25s ease
+  text-transform: uppercase
+  letter-spacing: 0.04em
+  border-radius: 5px
+  box-shadow: 0 0 60px rgba(#ff9100, 0.3)
+  &:hover
+    color: #fff
+    background-color: lighten($accent, 5%)
+    background-image: linear-gradient(to right, #ff9100, lighten(#f9b800, 10%))
+  &:focus
+    background-color: darken($accent, 5%)
+    background-image: linear-gradient(to right, #ff9100, #ff9100)
+    color: #fff
+  &[disabled]
+    background-color: #e5e5e5
+    cursor: not-allowed
+    color: #fff
+
+.wrapper
+  display: flex
+  flex-direction: column
+  height: 100%
+
+.content
+  flex: 1 0 auto
+
+.section-top
+  display: flex
+  align-items: center
+  margin-bottom: 45px
+  +r(767)
+    display: block
+    margin-bottom: 25px
+  .section-title
+    margin-bottom: 0
+    +r(992)
+      text-align: left
+    +r(767)
+      text-align: center
+  &__right
+    display: flex
+    align-items: center
+    margin-left: auto
+    +r(767)
+      margin-top: 30px
+      display: block
+      text-align: center
+    & > *:not(:last-child)
+      margin-right: 55px
+      +r(767)
+        margin-right: 0
+        margin-bottom: 20px
+  .slider-controls
+    +r(767)
+      justify-content: center
+
+.section-head
+  +r(767)
+    text-align: center
+  .section-title
+    margin-bottom: 10px
+  p
+    font-size: 16px
+    &:last-child
+      margin-bottom: 0
+
+.section-title
+  margin-bottom: 50px
+  font-weight: 400
+  +r(992)
+    text-align: center
+  +r(767)
+    margin-bottom: 20px
+  span
+    color: $accent
+    font-weight: 700
+
+.bg-gray
+  background-color: $bg-color

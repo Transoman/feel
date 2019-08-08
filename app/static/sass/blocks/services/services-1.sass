@@ -1,0 +1,53 @@
+.services-1
+  padding-top: 70px
+  +r(992)
+    padding-top: 110px
+
+.services-1-slider
+  padding-bottom: 20px
+  &__item
+    padding-right: 20px
+    &:hover
+      .services-1-slider
+        &__title
+          opacity: 1
+        &__inner
+          &::after
+            opacity: 1
+  &__inner
+    position: relative
+    z-index: 1
+    &::before
+      content: ''
+      position: absolute
+      top: 20px
+      left: 20px
+      z-index: -1
+      width: 100%
+      height: 100%
+      border: 2px solid $bd-color
+      border-radius: 2px
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      background-color: rgba(#000, 0.9)
+      +trans
+      opacity: 0
+    img
+      width: 100%
+      border: 1px solid $bd-color
+      border-radius: 2px
+  &__title
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    z-index: 1
+    text-transform: uppercase
+    color: #fff
+    opacity: 0
+    +trans

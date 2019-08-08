@@ -1,0 +1,39 @@
+.phone
+  display: flex
+  align-items: center
+  &__left
+    margin-right: 30px
+    +r(992)
+      display: flex
+      flex-direction: column
+      text-align: right
+  &__tel
+    font-size: 20px
+    font-weight: 300
+    color: #fefefe
+    white-space: nowrap
+    +r(992)
+      font-size: 16px
+    +r(576)
+      display: none
+    &::after
+      content: ' | '
+      display: inline-block
+      margin: 0 20px
+      color: #2c3544
+      +r(992)
+        display: none
+    &:last-child
+      &::after
+        display: none
+  &__icon
+    width: 12px
+    height: 12px
+    fill: $gray-blue
+    margin-right: 15px
+  &__callback
+    padding: 10px 15px 8px
+    font-size: 14px
+    color: $main-color
+    +r(767)
+      font-size: 10px

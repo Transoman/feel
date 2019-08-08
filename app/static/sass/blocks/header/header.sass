@@ -1,0 +1,29 @@
+.header
+  position: absolute
+  top: 0
+  right: 0
+  left: 0
+  z-index: 10
+  padding: 20px 0
+  +r(767)
+    padding: 10px 0
+  .container
+    display: flex
+    align-items: center
+  &__logo
+    flex-shrink: 0
+    margin-right: 250px
+    +r(1200)
+      margin-right: 50px
+  &__email
+    margin-right: 15px
+    font-size: 16px
+    color: $accent
+    border-bottom: 1px dashed $accent
+    +r(576)
+      display: none
+    &:hover, &:focus
+      color: lighten($accent, 15%)
+      border-color: transparent
+  &__phone
+    margin-left: auto
