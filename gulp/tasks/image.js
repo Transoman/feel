@@ -3,7 +3,7 @@ let gp = require('gulp-load-plugins')(),
     pngquant = require('imagemin-pngquant'),
     imgPATH = {
         "input": ["./app/static/images/**/*.{png,jpg,gif,svg}",
-            '!./app/static/images/svg/*'],
+            '!./app/static/images/svg/*', '!./app/static/images/favicon/*'],
         "ouput": "./build/static/images/"
     };
 
@@ -26,10 +26,14 @@ module.exports = function () {
                 }),
                 gp.imagemin.svgo(),
                 gp.imagemin.optipng({optimizationLevel: 3}),
-                pngquant({quality: '65-70', speed: 5})
+                pngquant({quality: [0.65, 0.7], speed: 5})
             ], {
                 verbose: true
             })))
             .pipe($.gulp.dest(imgPATH.ouput));
     });
+
+    $.gulp.task('clear', () =>
+        gp.cache.clearAll()
+    );
 };

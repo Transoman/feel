@@ -2,7 +2,9 @@ global.jQuery = require('jquery');
 var svg4everybody = require('svg4everybody'),
 popup = require('jquery-popup-overlay'),
 Swiper = require('swiper'),
-fancybox = require('@fancyapps/fancybox');
+fancybox = require('@fancyapps/fancybox'),
+mPageScroll2id = require('page-scroll-to-id'),
+Imask = require('imask');
 
 jQuery(document).ready(function($) {
 
@@ -75,6 +77,20 @@ jQuery(document).ready(function($) {
     }
   });
 
+  new Swiper('.review-slider', {
+    slidesPerView: 2,
+    spaceBetween: 30,
+    navigation: {
+      nextEl: '.review .swiper-button-next',
+      prevEl: '.review .swiper-button-prev',
+    },
+    breakpoints: {
+      992: {
+        slidesPerView: 1
+      }
+    }
+  });
+
   let count = $('.portfolio-list').children().length;
 
   if (count > 8) {
@@ -99,6 +115,62 @@ jQuery(document).ready(function($) {
     $('.portfolio__btn').hide();
   }
 
+  $('.scroll-nav a').mPageScroll2id({
+    highlightSelector: '.scroll-nav a',
+    forceSingleHighlight: true
+  });
+
+  $(window).scroll(function() {
+    if ($('.scroll-nav a[href="#hero"]').hasClass('mPS2id-highlight')) {
+      $('.scroll-nav a[href="#hero"]').parent().parent().addClass('is-active');
+    }
+    else {
+      $('.scroll-nav ul').removeClass('is-active');
+    }
+  });
+
+  setTimeout(function() {
+    if ($('.scroll-nav a[href="#hero"]').hasClass('mPS2id-highlight')) {
+      $('.scroll-nav a[href="#hero"]').parent().parent().addClass('is-active');
+    }
+  }, 500);
+
+  $('.ajax-form').submit(function(e) {
+    e.preventDefault();
+    var data = $(this).serialize();
+    ajaxSend($('.ajax-form'), data);
+  });
+
+  function ajaxSend(formName, data) {
+    jQuery.ajax({
+      type: "POST",
+      url: "sendmail.php",
+      data: data,
+      success: function() {
+        $(".modal").popup("hide");
+        $("#thanks").popup("show");
+        setTimeout(function() {
+          $(formName).trigger('reset');
+        }, 2000);
+      }
+    });
+  }
+
+  let inputMask = function() {
+    let inputMask = $('input[type="tel"]');
+    let maskOptions = {
+      mask: '+{7} (000) 000-00-00'
+    };
+
+    if (inputMask.length) {
+      inputMask.each(function(i, el) {
+        IMask(el, maskOptions);
+      });
+    }
+
+  };
+
+  inputMask();
 
   // SVG
   svg4everybody({});

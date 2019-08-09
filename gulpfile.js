@@ -21,7 +21,8 @@ $.gulp.task('dev', $.gulp.series(
         'styles:dev',
         'img:dev',
         'js:dev',
-        'svg'
+        'svg',
+        'php'
     )
 ));
 
@@ -33,7 +34,9 @@ $.gulp.task('build', $.gulp.series(
         'styles:build-min',
         'img:build',
         'js:build-min',
-        'svg'
+        'svg',
+        'php',
+        'favicons'
     )
 ));
 $.gulp.task('default', $.gulp.series(

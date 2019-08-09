@@ -1,10 +1,14 @@
 @import 'phone'
 @import 'slider'
 @import 'gallery-card'
+@import 'star-rating'
+@import 'scroll-nav'
 
 .img-gradient
   position: relative
   display: inline-block
+  border-radius: 2px
+  overflow: hidden
   &::before
     content: ''
     position: absolute
@@ -24,3 +28,5 @@
     line-height: 1
     text-transform: uppercase
     border-left: 3px solid #fff
+  img
+    border: 1px solid $bd-color

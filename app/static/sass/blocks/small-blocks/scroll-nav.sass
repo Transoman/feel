@@ -1,0 +1,46 @@
+.scroll-nav
+  position: fixed
+  top: 50%
+  right: 80px
+  transform: translateY(-50%)
+  z-index: 5
+  +r(1400)
+    right: 15px
+  +r(767)
+    display: none
+  ul
+    margin: 0
+    padding: 0
+    list-style: none
+    &.is-active
+      a
+        color: #fff
+        &::after
+          background-color: #fff
+        &.mPS2id-highlight
+          color: $accent
+  li
+    &:last-child
+      a
+        &.mPS2id-highlight
+          &::after
+            display: none
+  a
+    font-size: 14px
+    font-weight: 700
+    color: $main-color
+    &.mPS2id-highlight
+      color: $accent
+      &::after
+        height: 60px
+    &::after
+      content: ''
+      display: block
+      vertical-align: middle
+      margin: 15px auto
+      width: 2px
+      height: 0
+      background-color: $accent
+      +trans
+    &:hover
+      color: $accent

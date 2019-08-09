@@ -1,0 +1,34 @@
+section.contact
+  .container
+    .contact__wrap
+      h2.section-title
+        span Наши <br>
+        | контакты
+
+      .contact__item
+        .contact__item-icon
+          +icon('location')
+        p.contact__item-label Адрес:
+        p г. Москва, ул. Полбина, дом 3 стр. 1, офис 311
+
+      .contact__item
+        .contact__item-icon
+          +icon('time')
+        p.contact__item-label Время работы:
+        p Пн-Пт: с 10:00 до 20:00
+
+      .contact__item
+        .contact__item-icon
+          +icon('call')
+        p.contact__item-label Телефон:
+        a(href="tel:84954112678") 8 (495) 411-26-78 <br>
+        a(href="tel:89854112678") 8 (985) 411-26-78
+
+      .contact__item
+        .contact__item-icon
+          +icon('mail')
+        p.contact__item-label E-mail:
+        a(href="mailto:ifeel@gmail.com") ifeel@gmail.com
+
+
+  .contact__map#contact-map
