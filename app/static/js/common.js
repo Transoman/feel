@@ -170,6 +170,24 @@ jQuery(document).ready(function($) {
 
   };
 
+  // Fixed header
+  let fixedHeader = function(e) {
+    let header = $('.header');
+
+    if (e.scrollTop() > 150) {
+      header.addClass('fixed');
+    }
+    else {
+      header.removeClass('fixed');
+    }
+  };
+
+  fixedHeader($(this));
+
+  $(window).scroll(function() {
+    fixedHeader($(this));
+  });
+
   inputMask();
 
   // SVG

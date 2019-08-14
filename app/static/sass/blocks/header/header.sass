@@ -5,8 +5,18 @@
   left: 0
   z-index: 10
   padding: 20px 0
+  +trans
   +r(767)
     padding: 10px 0
+  &.fixed
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    z-index: 15
+    background-color: $main-color
+    box-shadow: 0 0 10px rgba($main-color, 0.5)
+    animation: slideDown 0.5s ease
   .container
     display: flex
     align-items: center
@@ -27,3 +37,9 @@
       border-color: transparent
   &__phone
     margin-left: auto
+
+@keyframes slideDown
+  0%
+    transform: translateY(-100%)
+  100%
+    transform: translateY(0)
